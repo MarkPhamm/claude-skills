@@ -60,6 +60,7 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 | data | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | SQL, statistical analysis, dashboards, data validation |
 | product-management | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | Specs, roadmaps, product planning |
 | enterprise-search | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | One query across your mail, chat and docs |
+| session-report | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | HTML report of token usage per plugin, skill and prompt, from local transcripts |
 | brag | [latent-spaces/brag](https://github.com/latent-spaces/brag) | `/brag` turns a project website into a short launch video |
 
 ## Skill packs
