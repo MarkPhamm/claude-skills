@@ -26,4 +26,7 @@ done
 # 4. HyperFrames video skills (third-party, installed from source)
 npx -y skills add heygen-com/hyperframes -g -a claude-code -y || echo "HyperFrames install failed; run: npx skills add heygen-com/hyperframes"
 
+# 5. Graphify (codebase knowledge graph, Python CLI; package name has a double y)
+uv tool install graphifyy && graphify install || echo "Graphify install failed; run: uv tool install graphifyy && graphify install"
+
 echo "Done. Start a new Claude Code session to load everything."

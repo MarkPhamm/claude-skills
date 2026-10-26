@@ -18,7 +18,7 @@ Then open a new Claude Code session and type `/tldr` to check.
 
 - `skills/` — my own skills (copied to `~/.claude/skills/`)
 - `CLAUDE.md` — global instructions (copied to `~/.claude/CLAUDE.md`)
-- `install.sh` — also installs plugins (superpowers, brag, i-have-adhd, caveman, ponytail, logo-design, code-review, mattpocock-skills) and the HyperFrames skills
+- `install.sh` — also installs plugins (superpowers, brag, i-have-adhd, caveman, ponytail, logo-design, code-review, mattpocock-skills) the HyperFrames skills, and Graphify (needs `uv`)
 
 ## Add a new skill
 
