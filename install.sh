@@ -26,6 +26,9 @@ done
 # 4. HyperFrames video skills (third-party, installed from source)
 npx -y skills add heygen-com/hyperframes -g -a claude-code -y || echo "HyperFrames install failed; run: npx skills add heygen-com/hyperframes"
 
+# Emil Kowalski's design/animation skills
+npx -y skills add emilkowalski/skills -g -a claude-code -y || echo "Emil skills install failed; run: npx skills add emilkowalski/skills"
+
 # 5. Graphify (codebase knowledge graph, Python CLI; package name has a double y)
 uv tool install graphifyy && graphify install || echo "Graphify install failed; run: uv tool install graphifyy && graphify install"
 
