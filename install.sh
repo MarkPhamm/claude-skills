@@ -16,10 +16,10 @@ fi
 cp CLAUDE.md ~/.claude/CLAUDE.md
 
 # 3. Plugins
-for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills anthropics/skills; do
+for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills anthropics/skills anthropics/knowledge-work-plugins; do
   claude plugin marketplace add "$m" || true
 done
-for p in superpowers@claude-plugins-official code-review@claude-plugins-official mattpocock-skills@claude-plugins-official brag@brag i-have-adhd@i-have-adhd caveman@caveman ponytail@ponytail logo-design@logo-design-skill taste-skill@taste-skill andrej-karpathy-skills@karpathy-skills example-skills@anthropic-agent-skills; do
+for p in superpowers@claude-plugins-official code-review@claude-plugins-official mattpocock-skills@claude-plugins-official brag@brag i-have-adhd@i-have-adhd caveman@caveman ponytail@ponytail logo-design@logo-design-skill taste-skill@taste-skill andrej-karpathy-skills@karpathy-skills example-skills@anthropic-agent-skills pr-review-toolkit@claude-plugins-official feature-dev@claude-plugins-official security-guidance@claude-plugins-official context7@claude-plugins-official data@knowledge-work-plugins product-management@knowledge-work-plugins enterprise-search@knowledge-work-plugins; do
   claude plugin install "$p" || true
 done
 
@@ -28,6 +28,9 @@ npx -y skills add heygen-com/hyperframes -g -a claude-code -y || echo "HyperFram
 
 # 5. Emil Kowalski's design/animation skills
 npx -y skills add emilkowalski/skills -g -a claude-code -y || echo "Emil skills install failed; run: npx skills add emilkowalski/skills"
+
+# dbt Labs skills (models, tests, Semantic Layer, Fusion migration)
+npx -y skills add dbt-labs/dbt-agent-skills -g -a claude-code -y || echo "dbt skills install failed; run: npx skills add dbt-labs/dbt-agent-skills"
 
 # 6. Graphify (codebase knowledge graph, Python CLI; package name has a double y)
 uv tool install graphifyy && graphify install || echo "Graphify install failed; run: uv tool install graphifyy && graphify install"

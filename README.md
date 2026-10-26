@@ -17,8 +17,9 @@ Then open a new Claude Code session and type `/tldr` to check.
 | Tool | Needed for | Check |
 |---|---|---|
 | [Claude Code](https://claude.com/claude-code) | everything | `claude --version` |
-| Node 20+ (22+ for taste-skill) | HyperFrames, Emil Kowalski skills, taste-skill | `node -v` |
-| [uv](https://docs.astral.sh/uv/) | Graphify | `uv --version` |
+| Node 20+ (22+ for taste-skill) | HyperFrames, Emil Kowalski, dbt skills, taste-skill | `node -v` |
+| [uv](https://docs.astral.sh/uv/) | dbt Labs | [dbt-labs/dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills) | dbt: building models, unit tests, Semantic Layer, dbt Cloud job troubleshooting, Mesh impact checks, warehouse moves, Fusion migration |
+| Graphify | `uv --version` |
 | Python 3.10+ | Graphify, logo-design scripts | `python3 --version` |
 | Chrome / Chromium | taste-skill browser check | — |
 
@@ -52,6 +53,13 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 | i-have-adhd | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) | Replies lead with the next action, numbered steps, short lists |
 | taste-skill | [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | Art direction, reference images and a browser check for frontend pages |
 | logo-design | [kaankiziltug/logo-design-skill](https://github.com/kaankiziltug/logo-design-skill) | Logo design from brief to SVG to brand guidelines, with a 1,400+ logo reference library |
+| pr-review-toolkit | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Specialist review agents: tests, silent failures, types, comments |
+| feature-dev | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Guided feature workflow: explore, design, build, review |
+| security-guidance | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Hook that warns about risky patterns (injection, unsafe eval) as Claude edits |
+| context7 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Pulls current library docs into the session |
+| data | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | SQL, statistical analysis, dashboards, data validation |
+| product-management | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | Specs, roadmaps, product planning |
+| enterprise-search | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | One query across your mail, chat and docs |
 | brag | [latent-spaces/brag](https://github.com/latent-spaces/brag) | `/brag` turns a project website into a short launch video |
 
 ## Skill packs
@@ -62,6 +70,7 @@ Installed with [`npx skills`](https://skills.sh) or their own CLI, not as plugin
 |---|---|---|
 | HyperFrames (21 skills) | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Video and motion graphics: `hyperframes`, `embedded-captions`, `faceless-explainer`, `motion-graphics`, `product-launch-video`, `slideshow`, `media-use` and more |
 | Emil Kowalski (15 skills) | [emilkowalski/skills](https://github.com/emilkowalski/skills) | UI and animation: `animate`, `animate-expo`, `improve-animations`, `review-animations`, `apple-design`, `mobile-native`, `break-ui`, `prototype`, `write-swift` and more |
+| dbt Labs | [dbt-labs/dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills) | dbt: building models, unit tests, Semantic Layer, dbt Cloud job troubleshooting, Mesh impact checks, warehouse moves, Fusion migration |
 | Graphify | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | `/graphify .` turns a codebase into a queryable knowledge graph. Installed with `uv tool install graphifyy` (double y) |
 
 ## Not in this repo
@@ -74,7 +83,7 @@ These arrive on their own and need no install:
 ## Overlaps to know about
 
 - **Reply style:** caveman and i-have-adhd both control how Claude writes. Disable one if replies look clipped: `claude plugin disable caveman@caveman`.
-- **Code review:** built-in `/code-review`, the code-review plugin, `/ponytail-review`, `/caveman-review` and Matt Pocock's `code-review` all trigger on "review this".
+- **Code review:** built-in `/code-review`, the code-review plugin, `/ponytail-review`, `/caveman-review` Matt Pocock's `code-review` and pr-review-toolkit all trigger on "review this".
 - **`prototype`:** both Emil Kowalski's pack and mattpocock-skills have one.
 
 ## Add something new
