@@ -16,10 +16,10 @@ fi
 cp CLAUDE.md ~/.claude/CLAUDE.md
 
 # 3. Plugins
-for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills; do
+for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills anthropics/skills; do
   claude plugin marketplace add "$m" || true
 done
-for p in superpowers@claude-plugins-official code-review@claude-plugins-official mattpocock-skills@claude-plugins-official brag@brag i-have-adhd@i-have-adhd caveman@caveman ponytail@ponytail logo-design@logo-design-skill taste-skill@taste-skill andrej-karpathy-skills@karpathy-skills; do
+for p in superpowers@claude-plugins-official code-review@claude-plugins-official mattpocock-skills@claude-plugins-official brag@brag i-have-adhd@i-have-adhd caveman@caveman ponytail@ponytail logo-design@logo-design-skill taste-skill@taste-skill andrej-karpathy-skills@karpathy-skills example-skills@anthropic-agent-skills; do
   claude plugin install "$p" || true
 done
 
