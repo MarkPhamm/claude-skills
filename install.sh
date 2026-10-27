@@ -15,6 +15,22 @@ if [ -f ~/.claude/CLAUDE.md ] && ! cmp -s CLAUDE.md ~/.claude/CLAUDE.md; then
 fi
 cp CLAUDE.md ~/.claude/CLAUDE.md
 
+# Generic memories: copied into every project Claude already knows, plus the home folder.
+# shortcut: projects opened after this miss them, rerun install.sh to cover new projects.
+mkdir -p ~/.claude/projects/"$(echo "$HOME" | sed 's/[^a-zA-Z0-9]/-/g')"
+for proj in ~/.claude/projects/*/; do
+  mkdir -p "$proj/memory"
+  for f in memory/*.md; do
+    [ "$(basename "$f")" = MEMORY.md ] || cp "$f" "$proj/memory/"
+  done
+  touch "$proj/memory/MEMORY.md"
+  while IFS= read -r line; do
+    link=$(echo "$line" | sed 's/.*\](\([^)]*\)).*/\1/')
+    grep -qF "]($link)" "$proj/memory/MEMORY.md" || echo "$line" >> "$proj/memory/MEMORY.md"
+  done < memory/MEMORY.md
+done
+echo "Copied memories into $(ls -d ~/.claude/projects/*/ | wc -l | tr -d ' ') project folders"
+
 # 3. Plugins
 for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills anthropics/skills anthropics/knowledge-work-plugins; do
   claude plugin marketplace add "$m" || true

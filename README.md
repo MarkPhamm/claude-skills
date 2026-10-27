@@ -31,6 +31,7 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 |---|---|---|
 | `skills/` | My own skills | `~/.claude/skills/` |
 | `CLAUDE.md` | Global instructions (no AI attribution in commits or PRs) | `~/.claude/CLAUDE.md` (existing file backed up as `CLAUDE.md.bak`) |
+| `memory/` | Generic memories: how I like Claude to write, review and commit | every `~/.claude/projects/*/memory/` (added, existing memories kept) |
 | `install.sh` | Installs everything below | — |
 
 ## My skills
