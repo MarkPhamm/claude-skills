@@ -1,3 +1,5 @@
+- [imports-at-top](code/imports-at-top.md) — Python imports always go at module top, never lazily inside functions
+- [prefer-minimal-infra](code/prefer-minimal-infra.md) — Infra/deploy work (Docker, Airflow, DAGs) starts with the smallest working setup, no production-grade stacks or future-proofing
 - [adhd-terse-communication](communication/adhd-terse-communication.md) — User has severe ADHD, dislikes reading, especially long/dense sentences — default to terse, bulleted output
 - [be-concise](communication/be-concise.md) — Replies must be as short as possible - answer the exact question in 1-3 lines, no stories, analogies, tables or option lists unless asked
 - [explain-jargon-and-acronyms](communication/explain-jargon-and-acronyms.md) — Always explain names/acronyms/jargon ELI5 by breaking them into pieces (schema parts, table code + field code), with explicit (guess) and ? labels; never invent acronym expansions
