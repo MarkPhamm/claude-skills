@@ -19,11 +19,23 @@ cp CLAUDE.md ~/.claude/CLAUDE.md
 # shortcut: projects opened after this miss them, rerun install.sh to cover new projects.
 mkdir -p ~/.claude/projects/"$(echo "$HOME" | sed 's/[^a-zA-Z0-9]/-/g')"
 for proj in ~/.claude/projects/*/; do
-  mkdir -p "$proj/memory"
-  for f in memory/*.md; do
-    [ "$(basename "$f")" = MEMORY.md ] || cp "$f" "$proj/memory/"
-  done
-  touch "$proj/memory/MEMORY.md"
+  mem="$proj/memory"
+  mkdir -p "$mem"
+  touch "$mem/MEMORY.md"
+  # Remove what the last run installed (files and index lines), so renames and moves leave no stale copies.
+  if [ -f "$mem/.claude-skills-files" ]; then
+    while IFS= read -r rel; do
+      rm -f "$mem/$rel"
+      grep -vF "]($rel)" "$mem/MEMORY.md" > "$mem/MEMORY.md.tmp" || true
+      mv "$mem/MEMORY.md.tmp" "$mem/MEMORY.md"
+    done < "$mem/.claude-skills-files"
+    find "$mem" -mindepth 1 -type d -empty -delete
+  fi
+  (cd memory && find . -name '*.md' ! -name MEMORY.md | sed 's|^\./||') > "$mem/.claude-skills-files"
+  while IFS= read -r rel; do
+    mkdir -p "$mem/$(dirname "$rel")"
+    cp "memory/$rel" "$mem/$rel"
+  done < "$mem/.claude-skills-files"
   while IFS= read -r line; do
     link=$(echo "$line" | sed 's/.*\](\([^)]*\)).*/\1/')
     grep -qF "]($link)" "$proj/memory/MEMORY.md" || echo "$line" >> "$proj/memory/MEMORY.md"

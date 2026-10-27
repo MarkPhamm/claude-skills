@@ -1,5 +1,5 @@
 ---
-name: feedback-teaching-style
+name: teaching-style
 description: "How to pace explanations when teaching this user Terraform (or similar) — no trailing questions, prioritize conceptual understanding over running commands"
 metadata: 
   node_type: memory

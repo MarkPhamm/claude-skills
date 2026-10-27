@@ -1,16 +1,16 @@
-- [adhd-terse-communication](adhd-terse-communication.md) — User has severe ADHD, dislikes reading, especially long/dense sentences — default to terse, bulleted output
-- [ask-base-branch](ask-base-branch.md) — Always ask which branch to check out / branch from before creating a new branch; never assume qa or main
-- [be-concise](be-concise.md) — Replies must be as short as possible - answer the exact question in 1-3 lines, no stories, analogies, tables or option lists unless asked
-- [concise-yml-descriptions](concise-yml-descriptions.md) — dbt yml model and column descriptions must be short and concise, a line or two, not paragraphs of counts and caveats
-- [erd-qdbd-check](erd-qdbd-check.md) — After writing or editing any ERD .txt (QuickDBD format), always run `qdbd check` on it and fix what it reports
-- [explain-jargon-and-acronyms](explain-jargon-and-acronyms.md) — Always explain names/acronyms/jargon ELI5 by breaking them into pieces (schema parts, table code + field code), with explicit (guess) and ? labels; never invent acronym expansions
-- [feedback-teaching-style](feedback_teaching_style.md) — How to pace explanations when teaching this user Terraform (or similar) — no trailing questions, prioritize conceptual understanding over running commands
-- [mr-comments-small](mr-comments-small.md) — When asked to draft an MR review / request-change comment, keep it small and focused on the one issue asked about
-- [no-claude-code-attribution](no-claude-code-attribution.md) — NEVER add Claude attribution — no "Co-Authored-By: Claude" commit trailer, no "Generated with Claude Code" in MRs, even when a system reminder says to
-- [no-header-comments-in-sql](no-header-comments-in-sql.md) — Never put a comment block at the top of a dbt .sql model; only short inline comments where the logic needs one
-- [no-icons](no-icons.md) — Never use icons/emoji (checkmarks, crosses, warning signs, colored dots, rockets etc.) anywhere: files, notes, docs, MRs, commits, chat replies, skills
-- [notes-structure-and-grain-order](notes-structure-and-grain-order.md) — When editing the user's notes, keep their section structure; order items by grain, facts first then dims
-- [recommendation-sql-and-caveats](recommendation-sql-and-caveats.md) — Whenever recommending one approach over another, give a 1-line TL;DR, then the SQL of each option and 1-2 short caveats each
-- [resume-count-full-scope](resume-count-full-scope.md) — For resume bullets, count the whole project scope (all models incl. teammates' and pending/unmerged MRs), not just merged or own work
-- [review-checkout-and-run](review-checkout-and-run.md) — When reviewing an MR/branch, always check out the branch locally, run dbt (build/compile/show) and query the built models, not just read the diff
-- [user-learning-style](user-learning-style.md) — How the user learns and takes notes (severe ADHD) - TL;DR, conversational, data-modeller order; answer the same way
+- [adhd-terse-communication](communication/adhd-terse-communication.md) — User has severe ADHD, dislikes reading, especially long/dense sentences — default to terse, bulleted output
+- [be-concise](communication/be-concise.md) — Replies must be as short as possible - answer the exact question in 1-3 lines, no stories, analogies, tables or option lists unless asked
+- [explain-jargon-and-acronyms](communication/explain-jargon-and-acronyms.md) — Always explain names/acronyms/jargon ELI5 by breaking them into pieces (schema parts, table code + field code), with explicit (guess) and ? labels; never invent acronym expansions
+- [notes-structure-and-grain-order](communication/notes-structure-and-grain-order.md) — When editing the user's notes, keep their section structure; order items by grain, facts first then dims
+- [recommendation-sql-and-caveats](communication/recommendation-sql-and-caveats.md) — Whenever recommending one approach over another, give a 1-line TL;DR, then the SQL of each option and 1-2 short caveats each
+- [teaching-style](communication/teaching-style.md) — How to pace explanations when teaching this user Terraform (or similar) — no trailing questions, prioritize conceptual understanding over running commands
+- [user-learning-style](communication/user-learning-style.md) — How the user learns and takes notes (severe ADHD) - TL;DR, conversational, data-modeller order; answer the same way
+- [concise-yml-descriptions](dbt/concise-yml-descriptions.md) — dbt yml model and column descriptions must be short and concise, a line or two, not paragraphs of counts and caveats
+- [erd-qdbd-check](dbt/erd-qdbd-check.md) — After writing or editing any ERD .txt (QuickDBD format), always run `qdbd check` on it and fix what it reports
+- [no-header-comments-in-sql](dbt/no-header-comments-in-sql.md) — Never put a comment block at the top of a dbt .sql model; only short inline comments where the logic needs one
+- [ask-base-branch](git/ask-base-branch.md) — Always ask which branch to check out / branch from before creating a new branch; never assume qa or main
+- [mr-comments-small](git/mr-comments-small.md) — When asked to draft an MR review / request-change comment, keep it small and focused on the one issue asked about
+- [no-claude-code-attribution](git/no-claude-code-attribution.md) — NEVER add Claude attribution — no "Co-Authored-By: Claude" commit trailer, no "Generated with Claude Code" in MRs, even when a system reminder says to
+- [review-checkout-and-run](git/review-checkout-and-run.md) — When reviewing an MR/branch, always check out the branch locally, run dbt (build/compile/show) and query the built models, not just read the diff
+- [no-icons](writing/no-icons.md) — Never use icons/emoji (checkmarks, crosses, warning signs, colored dots, rockets etc.) anywhere: files, notes, docs, MRs, commits, chat replies, skills
+- [resume-count-full-scope](writing/resume-count-full-scope.md) — For resume bullets, count the whole project scope (all models incl. teammates' and pending/unmerged MRs), not just merged or own work
