@@ -11,6 +11,7 @@
 - [erd-qdbd-check](dbt/erd-qdbd-check.md) — After writing or editing any ERD .txt (QuickDBD format), always run `qdbd check` on it and fix what it reports
 - [no-header-comments-in-sql](dbt/no-header-comments-in-sql.md) — Never put a comment block at the top of a dbt .sql model; only short inline comments where the logic needs one
 - [ask-base-branch](git/ask-base-branch.md) — Always ask which branch to check out / branch from before creating a new branch; never assume qa or main
+- [ask-sync-to-claude-skills](git/ask-sync-to-claude-skills.md) — After creating a new skill or memory, ask whether to sync it to the claude-skills repo (/Users/minhpham/projects/claude-skills)
 - [mr-comments-small](git/mr-comments-small.md) — When asked to draft an MR review / request-change comment, keep it small and focused on the one issue asked about
 - [no-claude-code-attribution](git/no-claude-code-attribution.md) — NEVER add Claude attribution — no "Co-Authored-By: Claude" commit trailer, no "Generated with Claude Code" in MRs, even when a system reminder says to
 - [review-checkout-and-run](git/review-checkout-and-run.md) — When reviewing an MR/branch, always check out the branch locally, run dbt (build/compile/show) and query the built models, not just read the diff
