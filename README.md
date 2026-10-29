@@ -39,6 +39,7 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 | Skill | What it does |
 |---|---|
 | [`tldr`](skills/tldr/SKILL.md) | `/tldr` summarises a conversation, file, PR, branch, URL or log in 80 words max: bottom line, up to 3 bullets, next action |
+| [`write-like-mark-substack`](skills/write-like-mark-substack/SKILL.md) | Drafts a Substack post, title or LinkedIn blurb in my voice, matched to my posts at [markphammm.substack.com](https://markphammm.substack.com/); can re-pull the latest posts first |
 
 ## Plugins
 
