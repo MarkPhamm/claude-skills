@@ -18,9 +18,7 @@ Then open a new Claude Code session and type `/tldr` to check.
 |---|---|---|
 | [Claude Code](https://claude.com/claude-code) | everything | `claude --version` |
 | Node 20+ (22+ for taste-skill) | HyperFrames, Emil Kowalski, dbt skills, taste-skill | `node -v` |
-| [uv](https://docs.astral.sh/uv/) | dbt Labs | [dbt-labs/dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills) | dbt: building models, unit tests, Semantic Layer, dbt Cloud job troubleshooting, Mesh impact checks, warehouse moves, Fusion migration |
-| Graphify | `uv --version` |
-| Python 3.10+ | Graphify, logo-design scripts | `python3 --version` |
+| Python 3.10+ | logo-design scripts | `python3 --version` |
 | Chrome / Chromium | taste-skill browser check | — |
 
 If a step fails, fix the requirement and run `./install.sh` again. Running it twice is safe.
@@ -74,7 +72,6 @@ Installed with [`npx skills`](https://skills.sh) or their own CLI, not as plugin
 | HyperFrames (21 skills) | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Video and motion graphics: `hyperframes`, `embedded-captions`, `faceless-explainer`, `motion-graphics`, `product-launch-video`, `slideshow`, `media-use` and more |
 | Emil Kowalski (15 skills) | [emilkowalski/skills](https://github.com/emilkowalski/skills) | UI and animation: `animate`, `animate-expo`, `improve-animations`, `review-animations`, `apple-design`, `mobile-native`, `break-ui`, `prototype`, `write-swift` and more |
 | dbt Labs | [dbt-labs/dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills) | dbt: building models, unit tests, Semantic Layer, dbt Cloud job troubleshooting, Mesh impact checks, warehouse moves, Fusion migration |
-| Graphify | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | `/graphify .` turns a codebase into a queryable knowledge graph. Installed with `uv tool install graphifyy` (double y) |
 
 ## Not in this repo
 

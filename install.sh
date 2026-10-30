@@ -60,7 +60,4 @@ npx -y skills add emilkowalski/skills -g -a claude-code -y || echo "Emil skills 
 # dbt Labs skills (models, tests, Semantic Layer, Fusion migration)
 npx -y skills add dbt-labs/dbt-agent-skills -g -a claude-code -y || echo "dbt skills install failed; run: npx skills add dbt-labs/dbt-agent-skills"
 
-# 6. Graphify (codebase knowledge graph, Python CLI; package name has a double y)
-uv tool install graphifyy && graphify install || echo "Graphify install failed; run: uv tool install graphifyy && graphify install"
-
 echo "Done. Start a new Claude Code session to load everything."
