@@ -29,6 +29,7 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 |---|---|---|
 | `skills/` | My own skills | `~/.claude/skills/` |
 | `CLAUDE.md` | Global instructions (no AI attribution in commits or PRs) | `~/.claude/CLAUDE.md` (existing file backed up as `CLAUDE.md.bak`) |
+| `settings.json` | Model, theme, no commit attribution, and which skills are turned off | merged into `~/.claude/settings.json` (other keys, including `autoMode`, left as they are) |
 | `memory/` | Generic memories: how I like Claude to write, review and commit | every `~/.claude/projects/*/memory/` (added, existing memories kept) |
 | `install.sh` | Installs everything below | — |
 
@@ -38,6 +39,11 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 |---|---|
 | [`tldr`](skills/tldr/SKILL.md) | `/tldr` summarises a conversation, file, PR, branch, URL or log in 80 words max: bottom line, up to 3 bullets, next action |
 | [`write-like-mark-substack`](skills/write-like-mark-substack/SKILL.md) | Drafts a Substack post, title or LinkedIn blurb in my voice, matched to my posts at [markphammm.substack.com](https://markphammm.substack.com/); can re-pull the latest posts first |
+| [`draw-like-me`](skills/draw-like-me/SKILL.md) | Hand-sketched Substack covers and diagrams in my ink style (violet highlighter, one blue accent) |
+| [`sync-md-to-substack`](skills/sync-md-to-substack/SKILL.md) | Pushes a local Markdown post to a Substack draft, or pulls a draft back into the file |
+| [`issues-resolvers`](skills/issues-resolvers/SKILL.md) | Triages open GitHub issues, plans the ones worth fixing, then opens a PR per approved plan |
+| [`issues-finders-and-resolvers`](skills/issues-finders-and-resolvers/SKILL.md) | Audits a product, files the top problems as issues, and merges a fix for each |
+| [`ux-ui-best-practice`](skills/ux-ui-best-practice/SKILL.md) | Restructures a flat page with UX laws, then adds purposeful motion |
 
 ## Plugins
 
@@ -62,6 +68,7 @@ If a step fails, fix the requirement and run `./install.sh` again. Running it tw
 | enterprise-search | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | One query across your mail, chat and docs |
 | session-report | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | HTML report of token usage per plugin, skill and prompt, from local transcripts |
 | brag | [latent-spaces/brag](https://github.com/latent-spaces/brag) | `/brag` turns a project website into a short launch video |
+| anfra | [holistics/anfra-skills](https://github.com/holistics/anfra-skills) | Anfra analytics: AML models, AQL queries, Data Apps |
 
 ## Skill packs
 
@@ -72,6 +79,8 @@ Installed with [`npx skills`](https://skills.sh) or their own CLI, not as plugin
 | HyperFrames (21 skills) | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Video and motion graphics: `hyperframes`, `embedded-captions`, `faceless-explainer`, `motion-graphics`, `product-launch-video`, `slideshow`, `media-use` and more |
 | Emil Kowalski (15 skills) | [emilkowalski/skills](https://github.com/emilkowalski/skills) | UI and animation: `animate`, `animate-expo`, `improve-animations`, `review-animations`, `apple-design`, `mobile-native`, `break-ui`, `prototype`, `write-swift` and more |
 | dbt Labs | [dbt-labs/dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills) | dbt: building models, unit tests, Semantic Layer, dbt Cloud job troubleshooting, Mesh impact checks, warehouse moves, Fusion migration |
+| Hallmark | [nutlope/hallmark](https://github.com/nutlope/hallmark) | Design skill for new pages that should not look generated |
+| Agent Reach | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | Read-only fetch of posts, comments, captions and listings when built-in web tools cannot |
 
 ## Not in this repo
 

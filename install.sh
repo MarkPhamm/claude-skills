@@ -15,6 +15,20 @@ if [ -f ~/.claude/CLAUDE.md ] && ! cmp -s CLAUDE.md ~/.claude/CLAUDE.md; then
 fi
 cp CLAUDE.md ~/.claude/CLAUDE.md
 
+# Portable settings only: model, theme, attribution, and which skills are off.
+# Leaves autoMode and any other local keys on the machine alone.
+python3 - <<'PY'
+import json
+from pathlib import Path
+dest = Path.home() / ".claude" / "settings.json"
+incoming = json.loads(Path("settings.json").read_text())
+current = json.loads(dest.read_text()) if dest.exists() else {}
+current.update(incoming)
+dest.parent.mkdir(parents=True, exist_ok=True)
+dest.write_text(json.dumps(current, indent=2) + "\n")
+print(f"Merged settings: {', '.join(incoming)}")
+PY
+
 # Generic memories: copied into every project Claude already knows, plus the home folder.
 # shortcut: projects opened after this miss them, rerun install.sh to cover new projects.
 mkdir -p ~/.claude/projects/"$(echo "$HOME" | sed 's/[^a-zA-Z0-9]/-/g')"
@@ -44,10 +58,10 @@ done
 echo "Copied memories into $(ls -d ~/.claude/projects/*/ | wc -l | tr -d ' ') project folders"
 
 # 3. Plugins
-for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills anthropics/skills anthropics/knowledge-work-plugins; do
+for m in anthropics/claude-plugins-official latent-spaces/brag ayghri/i-have-adhd pbakaus/impeccable JuliusBrussee/caveman DietrichGebert/ponytail kaankiziltug/logo-design-skill leonxlnx/taste-skill multica-ai/andrej-karpathy-skills anthropics/skills anthropics/knowledge-work-plugins holistics/anfra-skills; do
   claude plugin marketplace add "$m" || true
 done
-for p in superpowers@claude-plugins-official code-review@claude-plugins-official mattpocock-skills@claude-plugins-official brag@brag i-have-adhd@i-have-adhd caveman@caveman ponytail@ponytail logo-design@logo-design-skill taste-skill@taste-skill andrej-karpathy-skills@karpathy-skills example-skills@anthropic-agent-skills pr-review-toolkit@claude-plugins-official feature-dev@claude-plugins-official security-guidance@claude-plugins-official context7@claude-plugins-official data@knowledge-work-plugins product-management@knowledge-work-plugins enterprise-search@knowledge-work-plugins session-report@claude-plugins-official; do
+for p in superpowers@claude-plugins-official code-review@claude-plugins-official mattpocock-skills@claude-plugins-official brag@brag i-have-adhd@i-have-adhd caveman@caveman ponytail@ponytail logo-design@logo-design-skill taste-skill@taste-skill andrej-karpathy-skills@karpathy-skills example-skills@anthropic-agent-skills pr-review-toolkit@claude-plugins-official feature-dev@claude-plugins-official security-guidance@claude-plugins-official context7@claude-plugins-official data@knowledge-work-plugins product-management@knowledge-work-plugins enterprise-search@knowledge-work-plugins session-report@claude-plugins-official anfra@anfra-skills; do
   claude plugin install "$p" || true
 done
 
@@ -59,5 +73,9 @@ npx -y skills add emilkowalski/skills -g -a claude-code -y || echo "Emil skills 
 
 # dbt Labs skills (models, tests, Semantic Layer, Fusion migration)
 npx -y skills add dbt-labs/dbt-agent-skills -g -a claude-code -y || echo "dbt skills install failed; run: npx skills add dbt-labs/dbt-agent-skills"
+
+# Hallmark design skill (Together AI) and Agent Reach (read-only links)
+npx -y skills add nutlope/hallmark -g -a claude-code -y || echo "Hallmark install failed; run: npx skills add nutlope/hallmark"
+npx -y skills add Panniantong/Agent-Reach -g -a claude-code -y || echo "Agent Reach install failed; run: npx skills add Panniantong/Agent-Reach"
 
 echo "Done. Start a new Claude Code session to load everything."

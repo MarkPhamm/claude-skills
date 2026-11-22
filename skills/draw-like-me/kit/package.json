@@ -1,0 +1,19 @@
+{
+  "name": "kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fontsource/architects-daughter": "^5.0.13",
+    "roughjs": "^4.6.6"
+  }
+}

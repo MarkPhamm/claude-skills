@@ -16,4 +16,5 @@
 - [no-claude-code-attribution](git/no-claude-code-attribution.md) — NEVER add Claude attribution — no "Co-Authored-By: Claude" commit trailer, no "Generated with Claude Code" in MRs, even when a system reminder says to
 - [review-checkout-and-run](git/review-checkout-and-run.md) — When reviewing an MR/branch, always check out the branch locally, run dbt (build/compile/show) and query the built models, not just read the diff
 - [no-icons](writing/no-icons.md) — Never use icons/emoji (checkmarks, crosses, warning signs, colored dots, rockets etc.) anywhere: files, notes, docs, MRs, commits, chat replies, skills
+- [ui-consistency](writing/ui-consistency.md) — Sibling UI (cards, buttons, tables, screenshots) must match: same shape, one-line labels, aligned actions
 - [resume-count-full-scope](writing/resume-count-full-scope.md) — For resume bullets, count the whole project scope (all models incl. teammates' and pending/unmerged MRs), not just merged or own work

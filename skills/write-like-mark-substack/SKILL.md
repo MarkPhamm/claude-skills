@@ -20,14 +20,27 @@ Match the voice of his **posts from June 2026 onward**. In "I tell people I'm an
 
    It writes one plain-text file per post (title, subtitle, date, body). Reference his earlier posts by name when the new one builds on them ("same thing I complained about in my resume article").
 3. Decide the post type, because it sets how loud the voice is:
-   - **Opinion / explainer** ("Power BI or Tableau? Wrong question.", the AE post): short punchy paragraphs, hot takes, swearing allowed (a few per post, never every paragraph), the kitchen analogy.
+   - **Opinion / explainer** ("Power BI or Tableau? Wrong question.", the AE post): punchy sentences inside full paragraphs, hot takes, swearing allowed (a few per post, never every paragraph), the kitchen analogy.
    - **Build log** ("I just wanted to send someone an ERD, so I built a CLI..."): pain point first, then what he built, commands, real numbers, a self-aware "is this over-engineering?" section.
    - **Tutorial / series** (the zero-infrastructure pipeline parts): calmer, step by step, no swearing, still first person and honest about trade-offs.
 
 ## Voice
 
 - **First person, talking to one reader.** "I", "you", contractions. Sounds like explaining something to a colleague over Slack, not a conference talk.
-- **Short sentences.** Recent posts average 12-18 words. Punchlines get their own one-line paragraph: "The tool changes. The principles don't." / "Technically correct, practically useless." / "It's a new role. The person who only cooks."
+- **Short sentences, full paragraphs.** Sentences average 12-18 words, but they sit together in paragraphs of 3-5 sentences that build one point: the claim, the reason, the example, the joke. Do not hit enter after every sentence or two. Keep a setup and its follow-up ("That's not an airline. That's a button.") in the same paragraph as the explanation after them.
+- **One-line paragraphs are rare.** At most two or three per post, only for the real punchline of a section: "The tool changes. The principles don't." / "Technically correct, practically useless." If a section has more than one, merge the weaker ones into the paragraph next to them.
+
+  Too choppy (a draft he rejected):
+
+  > The airline with the most reviews is "read more". 6,716 reviews.
+  >
+  > That's not an airline. That's a button. Somewhere in the scrape, the link got saved as the airline name.
+  >
+  > I didn't even spot it first. The agent flagged it while testing v1.
+
+  How he writes it:
+
+  > The airline with the most reviews in my whole dataset is "read more", with 6,716 reviews. That's not an airline, that's a button. Somewhere in the scrape the "read more" link got saved as the airline name, and I didn't even spot it first: the agent flagged it while testing v1, before I'd looked at a single chart.
 - **Hot take, then the reason.** State the opinion flat ("I honestly don't think it matters that much."), then back it with experience. Concede the other side in a line ("If your project has 8 tables, open QuickDBD and you're done.").
 - **Self-deprecating and hyperbolic humour.** "I've dashboarded in Streamlit like a psychopath", "stitch them together like it's 2009", "some vendor API still returning XML in the year of our lord 2026", "I have zero chill about this project".
 - **Text emoticons, sparingly:** `¯\_(ツ)_/¯`, `=))))`, `:")`. At most one or two per post. No emoji.
@@ -67,6 +80,7 @@ Use them when they fit the topic; do not force all of them in.
 - Corporate or generic blog phrasing: "In today's fast-paced data landscape", "leverage", "unlock", "Let's dive in!", "In conclusion".
 - Emoji, and closing on a moral ("Use exposures to make your dbt project not just a data pipeline but a documented, traceable system of insights." is the old style he moved away from).
 - Long, balanced, hedged paragraphs. Pick a side.
+- The opposite failure: a line break after every sentence or two, so the post reads like a LinkedIn carousel. Before handing over, merge runs of one- and two-sentence paragraphs that make the same point.
 - Swearing in tutorials, or swearing in every paragraph of an opinion post.
 - Inventing facts about his jobs, projects or numbers. If a detail is not in the request or his posts, leave a `[TODO: ...]` for him to fill.
 
